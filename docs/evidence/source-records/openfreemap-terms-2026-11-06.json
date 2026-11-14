@@ -1,0 +1,74 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:openfreemap-terms-2026-11-06",
+  "slug": "openfreemap-terms-2026-11-06",
+  "title": "OpenFreeMap Terms of Service",
+  "source_type": "official_documentation",
+  "publisher": {
+    "name": "OpenFreeMap",
+    "organization": "Hyperknot Software Kft."
+  },
+  "locator": {
+    "url": "https://openfreemap.org/tos/"
+  },
+  "version": {
+    "label": "Last updated 2026-10-14"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T00:00:00+05:30",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "current",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T00:00:00+05:30",
+    "review_after": "2027-02-06T00:00:00+05:30",
+    "volatility_notes": "Service terms and capacity can change; review before release or if the endpoint begins refusing downloads."
+  },
+  "license": {
+    "status": "known",
+    "name": "OpenFreeMap Terms of Service",
+    "url": "https://openfreemap.org/tos/",
+    "redistribution": "metadata_and_summary_only",
+    "usage_notes": "The terms allow offline downloads within their published conditions. The service is offered free as-is; this is not a license to redistribute the map data or service."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 0.99,
+    "rationale": "The publisher's current terms directly state the per-download, concurrency, User-Agent, and availability conditions."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:openfreemap-offline-download-limits",
+      "claim": "Each offline download may contain at most 3,000 tiles or 50 MB, may use at most four parallel requests, and must use a unique identifying User-Agent.",
+      "relationship": "direct_support",
+      "location": "Offline Downloads",
+      "notes": "The app targets lower stop thresholds of 2,800 completed tiles or 32 MB, with a 4 MB per-response cap and four shared HTTP requests. Network behavior remains to be checked on device."
+    },
+    {
+      "claim_id": "claim:openfreemap-public-service-availability",
+      "claim": "OpenFreeMap describes its public service as free and as-is, without warranties, and may discontinue it.",
+      "relationship": "direct_support",
+      "location": "Overview; Disclaimer of Warranties; Site Availability and Changes"
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "req:offline-saved-route",
+      "relation": "informs"
+    },
+    {
+      "target_id": "dec:offline-map-corridor-downloads",
+      "relation": "supports"
+    },
+    {
+      "target_id": "imp:offline-map-repository",
+      "relation": "informs"
+    }
+  ]
+}

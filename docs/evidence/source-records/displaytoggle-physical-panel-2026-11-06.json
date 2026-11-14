@@ -1,0 +1,56 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:displaytoggle-physical-panel-2026-11-06",
+  "slug": "displaytoggle-physical-panel-2026-11-06",
+  "title": "Display Toggle source and README",
+  "source_type": "official_documentation",
+  "publisher": {
+    "name": "Ulysses Zhan"
+  },
+  "locator": {
+    "url": "https://github.com/UlyssesZh/DisplayToggle"
+  },
+  "version": {
+    "label": "Documentation and source inspected 2026-11-06"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T17:39:02.397943+00:00",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "current",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T17:39:02.397943+00:00",
+    "review_after": "2027-02-06T09:54:40Z",
+    "volatility_notes": "Recheck with a new Android, OEM firmware, or utility release."
+  },
+  "license": {
+    "status": "unknown",
+    "redistribution": "metadata_and_summary_only",
+    "usage_notes": "Only metadata and paraphrased claims are retained."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 0.95,
+    "rationale": "Primary documentation/source directly inspected; application-specific inference marked untested."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:displaytoggle-physical-panel-2026-11-06",
+      "claim": "Display Toggle uses a privileged Shizuku service to set physical display power mode OFF without requesting normal Android sleep/lock. Its source targets SurfaceControl calls; Android 16/RE compatibility requires a device test.",
+      "relationship": "direct_support",
+      "location": "Documentation and linked source"
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "diag:re-screen-on",
+      "relation": "informs"
+    }
+  ]
+}

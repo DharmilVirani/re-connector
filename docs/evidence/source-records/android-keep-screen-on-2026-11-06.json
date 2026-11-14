@@ -1,0 +1,56 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:android-keep-screen-on-2026-11-06",
+  "slug": "android-keep-screen-on-2026-11-06",
+  "title": "Android WindowManager.LayoutParams",
+  "source_type": "official_documentation",
+  "publisher": {
+    "name": "Google"
+  },
+  "locator": {
+    "url": "https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_KEEP_SCREEN_ON"
+  },
+  "version": {
+    "label": "Documentation accessed 2026-11-06"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T17:29:15.513758+00:00",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "current",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T17:29:15.513758+00:00",
+    "review_after": "2027-02-06T09:54:40Z",
+    "volatility_notes": "Recheck for another RE app build, firmware, or Android version."
+  },
+  "license": {
+    "status": "unknown",
+    "redistribution": "metadata_and_summary_only",
+    "usage_notes": "Only metadata and paraphrased claims are retained."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 0.95,
+    "rationale": "Primary documentation; applicability limitations preserved in the claim and findings."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:android-keep-screen-on-2026-11-06",
+      "claim": "FLAG_KEEP_SCREEN_ON has value 128 and requests that the device screen remain on while the window is visible.",
+      "relationship": "direct_support",
+      "location": "FLAG_KEEP_SCREEN_ON"
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "diag:re-screen-on",
+      "relation": "supports"
+    }
+  ]
+}

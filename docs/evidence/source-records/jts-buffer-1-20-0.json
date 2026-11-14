@@ -1,0 +1,73 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:jts-buffer-1-20-0",
+  "slug": "jts-buffer-1-20-0",
+  "title": "JTS BufferOp API",
+  "source_type": "official_documentation",
+  "publisher": {
+    "name": "JTS Topology Suite",
+    "organization": "LocationTech"
+  },
+  "locator": {
+    "url": "https://locationtech.github.io/jts/javadoc/org/locationtech/jts/operation/buffer/BufferOp.html"
+  },
+  "version": {
+    "label": "1.20.0"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T00:00:00+05:30",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "stable",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T00:00:00+05:30",
+    "review_after": "2027-05-06T00:00:00+05:30",
+    "volatility_notes": "The method is tied to the pinned 1.20.0 dependency. Re-check if upgraded."
+  },
+  "license": {
+    "status": "known",
+    "name": "JTS dual-licensed under EPL-2.0 or EDL-1.0",
+    "url": "https://github.com/locationtech/jts/blob/1.20.0/LICENSES.md",
+    "redistribution": "metadata_and_summary_only",
+    "usage_notes": "The app selects EDL-1.0 and includes its complete license text and a notice in app assets."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 0.98,
+    "rationale": "The upstream versioned Javadoc directly documents the buffer API; the pinned upstream repository records licensing."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:jts-topology-aware-line-buffer",
+      "claim": "JTS BufferOp computes a geometry buffer at a requested distance and supports explicit circular-arc approximation and end-cap style parameters.",
+      "relationship": "direct_support",
+      "location": "BufferOp.bufferOp(Geometry, double, int, int)"
+    },
+    {
+      "claim_id": "claim:jts-edl-license",
+      "claim": "JTS 1.20.0 is distributed under the Eclipse Distribution License 1.0 or Eclipse Public License 2.0; this project selects EDL-1.0 and ships the notice.",
+      "relationship": "direct_support",
+      "location": "Upstream licensing FAQ and LICENSES.md"
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "req:offline-saved-route",
+      "relation": "informs"
+    },
+    {
+      "target_id": "dec:offline-map-corridor-downloads",
+      "relation": "supports"
+    },
+    {
+      "target_id": "imp:route-corridor-geometry",
+      "relation": "informs"
+    }
+  ]
+}

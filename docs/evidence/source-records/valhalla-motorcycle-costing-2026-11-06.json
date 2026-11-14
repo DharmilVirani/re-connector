@@ -1,0 +1,61 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:valhalla-motorcycle-costing-2026-11-06",
+  "slug": "valhalla-motorcycle-costing-2026-11-06",
+  "title": "Valhalla Route API Reference",
+  "source_type": "official_documentation",
+  "publisher": {
+    "name": "Valhalla Project",
+    "organization": "Valhalla contributors"
+  },
+  "locator": {
+    "url": "https://github.com/valhalla/valhalla/blob/master/docs/docs/api/route/api-reference.md"
+  },
+  "version": {
+    "label": "master documentation accessed 2026-11-06"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T09:54:40Z",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "current",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T09:54:40Z",
+    "review_after": "2027-02-06T09:54:40Z",
+    "volatility_notes": "Recheck if the route API version or endpoint changes."
+  },
+  "license": {
+    "status": "unknown",
+    "redistribution": "metadata_and_summary_only",
+    "usage_notes": "Only metadata and paraphrased claims are retained."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 0.99,
+    "rationale": "The route API reference directly describes the motorcycle costing model and its options."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:valhalla-motorcycle-costing",
+      "claim": "Valhalla's route API supports a motorcycle costing model with motorcycle-specific route preferences.",
+      "relationship": "direct_support",
+      "location": "Costing options; Motorcycle costing options"
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "dec:route-provider",
+      "relation": "supports"
+    },
+    {
+      "target_id": "imp:valhalla-motorcycle-provider",
+      "relation": "informs"
+    }
+  ]
+}

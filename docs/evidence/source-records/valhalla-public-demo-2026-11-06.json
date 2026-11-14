@@ -1,0 +1,68 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:valhalla-public-demo-2026-11-06",
+  "slug": "valhalla-public-demo-2026-11-06",
+  "title": "Valhalla Public Demo Server Guidance",
+  "source_type": "repository",
+  "publisher": {
+    "name": "Valhalla Project",
+    "organization": "Valhalla contributors"
+  },
+  "locator": {
+    "url": "https://github.com/valhalla/valhalla#demo-server"
+  },
+  "version": {
+    "label": "Repository documentation accessed 2026-11-06"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T09:54:40Z",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "current",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T09:54:40Z",
+    "review_after": "2026-12-06T09:54:40Z",
+    "volatility_notes": "Public demo policy and availability can change; review before distribution beyond personal use."
+  },
+  "license": {
+    "status": "unknown",
+    "redistribution": "metadata_and_summary_only",
+    "usage_notes": "Only short metadata and a paraphrase are retained; source terms for the hosted demo should be checked before wider distribution."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 0.98,
+    "rationale": "The Valhalla project's own README describes the public demo, fair-use rate limits, and identifying-client guidance."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:valhalla-public-demo-policy",
+      "claim": "FOSSGIS hosts a public Valhalla demo governed by fair-use rate limits; apps requesting routes for end users are asked to identify the client with X-Client-Id and contact the project through GitHub Discussions.",
+      "relationship": "direct_support",
+      "location": "Demo Server"
+    },
+    {
+      "claim_id": "claim:valhalla-public-demo-no-price-published",
+      "claim": "The cited public-demo guidance gives no per-call price or uptime guarantee.",
+      "relationship": "context_only",
+      "location": "Demo Server",
+      "notes": "Absence of a listed price is not a promise that service terms will remain unchanged."
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "dec:route-provider",
+      "relation": "supports"
+    },
+    {
+      "target_id": "imp:valhalla-motorcycle-provider",
+      "relation": "informs"
+    }
+  ]
+}

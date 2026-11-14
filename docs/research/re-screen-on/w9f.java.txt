@@ -1,0 +1,36 @@
+Direct JADX 1.5.6 output excerpts; line numbers refer to the full temporary output.
+
+--- w9f.java:59-91 ---
+59:     public final void b(kub kubVar) {
+60:         mub.a aVar = new mub.a();
+61:         aVar.o(kubVar.i());
+62:         aVar.n(kubVar.h());
+63:         aVar.p(kubVar.j());
+64:         aVar.l(kubVar.l());
+65:         aVar.m(kubVar.m());
+66:         aVar.s(kubVar.n());
+67:         aVar.q(kubVar.k());
+68:         mub mubVarB = aVar.b();
+69:         Context context = this.a;
+70:         Intrinsics.o(context, "context");
+71:         this.b = new gub(context, mubVarB, this);
+72:     }
+73: 
+74:     public final void c(@fbd Bitmap bitmap) {
+75:         Intrinsics.p(bitmap, "bitmap");
+76:         String str = this.d;
+77:         try {
+78:             gub gubVar = this.b;
+79:             if (gubVar != null) {
+80:                 gubVar.g(bitmap, str);
+81:             }
+82:         } catch (Exception e2) {
+83:             e2.getLocalizedMessage();
+84:         }
+85:     }
+86: 
+87:     public final void d() {
+88:         try {
+89:             gub gubVar = this.b;
+90:             if (gubVar != null) {
+91:                 gubVar.i();

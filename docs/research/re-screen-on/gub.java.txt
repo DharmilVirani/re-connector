@@ -1,0 +1,143 @@
+Direct JADX 1.5.6 output excerpts; line numbers refer to the full temporary output.
+
+--- gub.java:85-96 ---
+85:     public gub(@fbd Context context, @fbd mub mediaFormatOptions, @fbd c26 errorCallback) throws IOException {
+86:         Intrinsics.p(context, "context");
+87:         Intrinsics.p(mediaFormatOptions, "mediaFormatOptions");
+88:         Intrinsics.p(errorCallback, "errorCallback");
+89:         this.m2 = context;
+90:         this.n2 = mediaFormatOptions;
+91:         this.o2 = errorCallback;
+92:         MediaCodec mediaCodecCreateEncoderByType = MediaCodec.createEncoderByType(mediaFormatOptions.m());
+93:         Intrinsics.o(mediaCodecCreateEncoderByType, "createEncoderByType(mediaFormatOptions.mimeType)");
+94:         this.q2 = mediaCodecCreateEncoderByType;
+95:         this.u2 = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', d9e.t, 'B', d9e.l, 'D', 'E', 'F'};
+96:     }
+
+--- gub.java:151-221 ---
+151:     public final void e() {
+152:         try {
+153:             kuj.a.a("processBuffer", new Object[0]);
+154:             while (true) {
+155:                 boolean z = this.r2;
+156:                 if (z && z) {
+157:                     MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
+158:                     int iDequeueOutputBuffer = this.q2.dequeueOutputBuffer(bufferInfo, w2);
+159:                     kuj.a.a(Intrinsics.C("outputBufferIndex 1:", Integer.valueOf(iDequeueOutputBuffer)), new Object[0]);
+160:                     while (iDequeueOutputBuffer >= 0) {
+161:                         kuj.b bVar = kuj.a;
+162:                         bVar.a(Intrinsics.C("mBufferInfoSize :", Integer.valueOf(bufferInfo.size)), new Object[0]);
+163:                         ByteBuffer outputBuffer = this.q2.getOutputBuffer(iDequeueOutputBuffer);
+164:                         int i = bufferInfo.size;
+165:                         byte[] bArr = new byte[i];
+166:                         if (outputBuffer != null) {
+167:                             outputBuffer.get(bArr);
+168:                         }
+169:                         int i2 = bufferInfo.flags;
+170:                         if (i2 == 1) {
+171:                             LogInstrumentation.d("FrameType", "BUFFER_FLAG_KEY_FRAME");
+172:                             byte[] bArr2 = this.s2;
+173:                             if (bArr2 != null) {
+174:                                 int length = bufferInfo.size + bArr2.length;
+175:                                 byte[] bArr3 = new byte[length];
+176:                                 bVar.a(Intrinsics.C("keyframe:", Integer.valueOf(length)), new Object[0]);
+177:                                 byte[] bArr4 = this.s2;
+178:                                 Intrinsics.m(bArr4);
+179:                                 System.arraycopy(bArr4, 0, bArr3, 0, bArr4.length);
+180:                                 byte[] bArr5 = this.s2;
+181:                                 Intrinsics.m(bArr5);
+182:                                 System.arraycopy(bArr, 0, bArr3, bArr5.length, i);
+183:                                 f(bArr3, bufferInfo.presentationTimeUs * 1000);
+184:                             }
+185:                         } else if (i2 != 2) {
+186:                             LogInstrumentation.d("FrameType", Intrinsics.C(ComposeSessionReplayConstants.Formats.COLON_SPACE, Integer.valueOf(i2)));
+187:                             f(bArr, bufferInfo.presentationTimeUs * 1000);
+188:                         } else {
+189:                             LogInstrumentation.d("FrameType", "BUFFER_FLAG_CODEC_CONFIG");
+190:                             byte[] bArr6 = new byte[bufferInfo.size];
+191:                             this.s2 = bArr;
+192:                             bVar.a(Intrinsics.C("configbyteArray :", Integer.valueOf(i)), new Object[0]);
+193:                         }
+194:                         this.q2.releaseOutputBuffer(iDequeueOutputBuffer, false);
+195:                         iDequeueOutputBuffer = this.q2.dequeueOutputBuffer(bufferInfo, w2);
+196:                         bVar.a(Intrinsics.C("outputBufferIndex 2:", Integer.valueOf(iDequeueOutputBuffer)), new Object[0]);
+197:                     }
+198:                 }
+199:                 return;
+200:             }
+201:         } catch (IllegalStateException e) {
+202:             c26 c26Var = this.o2;
+203:             if (c26Var != null) {
+204:                 c26Var.a(e);
+205:             }
+206:             LogInstrumentation.d("Crash3", Intrinsics.C(ComposeSessionReplayConstants.Formats.COLON_SPACE, e.getMessage()));
+207:             e.printStackTrace();
+208:         }
+209:     }
+210: 
+211:     public final void f(@fbd byte[] buffer, long j) {
+212:         Intrinsics.p(buffer, "buffer");
+213:         kuj.b bVar = kuj.a;
+214:         bVar.a(Intrinsics.C("Buffer: ", Integer.valueOf(buffer.length)), new Object[0]);
+215:         if (y2.size() >= 30) {
+216:             y2.poll();
+217:             bVar.a("poll", new Object[0]);
+218:         }
+219:         z68 z68Var = new z68();
+220:         z68Var.a = buffer;
+221:         z68Var.b = j;
+
+--- gub.java:225-249 ---
+225:     public final void g(@fbd Bitmap bitmap, @fbd String canvasType) {
+226:         Canvas canvasLockHardwareCanvas;
+227:         Intrinsics.p(bitmap, "bitmap");
+228:         Intrinsics.p(canvasType, "canvasType");
+229:         kuj.a.a(Intrinsics.C("setBitmapToEncode: ", bitmap), new Object[0]);
+230:         try {
+231:             if (canvasType.equals("softwareCanvas")) {
+232:                 Surface surface = this.p2;
+233:                 canvasLockHardwareCanvas = surface == null ? null : surface.lockCanvas(null);
+234:             } else {
+235:                 Surface surface2 = this.p2;
+236:                 if (surface2 != null) {
+237:                     canvasLockHardwareCanvas = surface2.lockHardwareCanvas();
+238:                 }
+239:             }
+240:             if (canvasLockHardwareCanvas != null) {
+241:                 canvasLockHardwareCanvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
+242:             }
+243:             Surface surface3 = this.p2;
+244:             if (surface3 == null) {
+245:                 return;
+246:             }
+247:             surface3.unlockCanvasAndPost(canvasLockHardwareCanvas);
+248:         } catch (IllegalStateException e) {
+249:             c26 c26Var = this.o2;
+
+--- gub.java:258-283 ---
+258:     public final void h() {
+259:         kuj.a.a("startMediaEncoder", new Object[0]);
+260:         try {
+261:             this.q2.configure(d(), (Surface) null, (MediaCrypto) null, 1);
+262:             this.p2 = this.q2.createInputSurface();
+263:             this.q2.start();
+264:             this.r2 = true;
+265:             e();
+266:         } catch (Exception e) {
+267:             this.o2.a(e);
+268:             LogInstrumentation.d("Crash1: ", Intrinsics.C("", e.getLocalizedMessage()));
+269:             kuj.a.a(Intrinsics.C("MEDIACODEC ERROR: ", e.getMessage()), new Object[0]);
+270:             e.printStackTrace();
+271:         }
+272:     }
+273: 
+274:     public final void i() {
+275:         cyb cybVar = new cyb(this.m2);
+276:         this.t2 = cybVar;
+277:         cybVar.b();
+278:         start();
+279:     }
+280: 
+281:     public final void j() {
+282:         interrupt();
+283:         cyb cybVar = this.t2;

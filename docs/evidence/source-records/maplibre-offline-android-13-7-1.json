@@ -1,0 +1,73 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:maplibre-offline-android-13-7-1",
+  "slug": "maplibre-offline-android-13-7-1",
+  "title": "MapLibre Native Android Offline API",
+  "source_type": "official_documentation",
+  "publisher": {
+    "name": "MapLibre Native Android",
+    "organization": "MapLibre"
+  },
+  "locator": {
+    "url": "https://maplibre.org/maplibre-native/android/api/-map-libre%20-native%20-android/org.maplibre.android.offline/index.html"
+  },
+  "version": {
+    "label": "13.7.1"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T00:00:00+05:30",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "stable",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T00:00:00+05:30",
+    "review_after": "2027-05-06T00:00:00+05:30",
+    "volatility_notes": "The API claim is version-scoped; re-check when the MapLibre dependency changes."
+  },
+  "license": {
+    "status": "known",
+    "name": "MapLibre Native Android documentation",
+    "url": "https://maplibre.org/maplibre-native/android/examples/",
+    "redistribution": "metadata_and_summary_only",
+    "usage_notes": "Cite and paraphrase the public API documentation; do not copy its source text."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 0.99,
+    "rationale": "Version-matched MapLibre API documentation directly describes the callback and status behavior used by the implementation."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:maplibre-offline-region-lifecycle",
+      "claim": "Creating an offline region leaves it inactive; the client starts or resumes the download by setting the region's download state to active.",
+      "relationship": "direct_support",
+      "location": "OfflineManager.createOfflineRegion; OfflineRegion.setDownloadState"
+    },
+    {
+      "claim_id": "claim:maplibre-offline-status-byte-limit",
+      "claim": "Offline status reports completed tile/resource counts and completed bytes, but the final required byte total is not available; required resource count may initially be a lower bound.",
+      "relationship": "direct_support",
+      "location": "OfflineRegionStatus"
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "req:offline-saved-route",
+      "relation": "informs"
+    },
+    {
+      "target_id": "dec:offline-map-corridor-downloads",
+      "relation": "supports"
+    },
+    {
+      "target_id": "imp:offline-map-repository",
+      "relation": "informs"
+    }
+  ]
+}

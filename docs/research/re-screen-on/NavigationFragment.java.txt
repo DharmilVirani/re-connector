@@ -1,0 +1,346 @@
+Direct JADX 1.5.6 output excerpts; line numbers refer to the full temporary output.
+
+--- NavigationFragment.java:725-748 ---
+725:     @SourceDebugExtension({"SMAP\nNavigationFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NavigationFragment.kt\ncom/royalenfield/reprime/ui/home/navigation/fragment/NavigationFragment$startTimer$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,4585:1\n1#2:4586\n*E\n"})
+726:     public static final class g0 implements Runnable {
+727:         public g0() {
+728:         }
+729: 
+730:         @Override // java.lang.Runnable
+731:         public void run() {
+732:             if (NavigationFragment.this.U2) {
+733:                 NavigationFragment navigationFragment = NavigationFragment.this;
+734:                 if (navigationFragment.T2 != null) {
+735:                     try {
+736:                         Bitmap bitmap = navigationFragment.M2;
+737:                         if (bitmap != null) {
+738:                             navigationFragment.k9(bitmap);
+739:                         }
+740:                     } catch (NullPointerException e) {
+741:                         e.printStackTrace();
+742:                     }
+743:                 }
+744:             }
+745:             jub jubVar = NavigationFragment.this.G3;
+746:             NavigationFragment.this.k4.postDelayed(this, jubVar != null ? jubVar.getFrameToSend() : 250L);
+747:         }
+748:     }
+
+--- NavigationFragment.java:931-963 ---
+931:     @Instrumented
+932:     public static final class m implements Runnable {
+933:         public final /* synthetic */ zif.b n2;
+934: 
+935:         public m(zif.b bVar) {
+936:             this.n2 = bVar;
+937:         }
+938: 
+939:         @Override // java.lang.Runnable
+940:         public void run() {
+941:             NavigationFragment navigationFragment;
+942:             int i;
+943:             if (NavigationFragment.this.U2 && this.n2 == zif.b.INFOTAINMENT) {
+944:                 NavigationFragment navigationFragment2 = NavigationFragment.this;
+945:                 if (navigationFragment2.T2 != null && navigationFragment2.c3() != null && (i = (navigationFragment = NavigationFragment.this).L3) < 1) {
+946:                     navigationFragment.L3 = i + 1;
+947:                     k18 k18VarC3 = navigationFragment.c3();
+948:                     if (k18VarC3 != null) {
+949:                         k18VarC3.u0(NavigationFragment.this, null);
+950:                     }
+951:                     jub jubVar = NavigationFragment.this.G3;
+952:                     if (jubVar != null) {
+953:                         jubVar.getFramerate();
+954:                     }
+955:                     NavigationFragment navigationFragment3 = NavigationFragment.this;
+956:                     jub jubVar2 = navigationFragment3.G3;
+957:                     navigationFragment3.M3 = (jubVar2 == null || jubVar2.getFramerate() != 4) ? 500 : 250;
+958:                 }
+959:             }
+960:             NavigationFragment navigationFragment4 = NavigationFragment.this;
+961:             navigationFragment4.J3.postDelayed(this, navigationFragment4.M3);
+962:         }
+963:     }
+
+--- NavigationFragment.java:1001-1045 ---
+1001: 
+1002:         @Override // android.content.BroadcastReceiver
+1003:         public void onReceive(Context context, Intent intent) {
+1004:             PowerManager.WakeLock wakeLock;
+1005:             Intrinsics.p(context, "context");
+1006:             Intrinsics.p(intent, "intent");
+1007:             intent.toString();
+1008:             String action = intent.getAction();
+1009:             if (action != null) {
+1010:                 int iHashCode = action.hashCode();
+1011:                 if (iHashCode != -2128145023) {
+1012:                     if (iHashCode == -1454123155 && action.equals("android.intent.action.SCREEN_ON")) {
+1013:                         NavigationFragment.this.x2 = false;
+1014:                         intent.getAction();
+1015:                         PowerManager.WakeLock wakeLock2 = NavigationFragment.this.z2;
+1016:                         if (wakeLock2 == null || !wakeLock2.isHeld() || (wakeLock = NavigationFragment.this.z2) == null) {
+1017:                             return;
+1018:                         }
+1019:                         wakeLock.release();
+1020:                         return;
+1021:                     }
+1022:                     return;
+1023:                 }
+1024:                 if (action.equals("android.intent.action.SCREEN_OFF")) {
+1025:                     intent.getAction();
+1026:                     NavigationFragment navigationFragment = NavigationFragment.this;
+1027:                     if (navigationFragment.A2) {
+1028:                         return;
+1029:                     }
+1030:                     navigationFragment.x2 = true;
+1031:                     PowerManager.WakeLock wakeLock3 = navigationFragment.z2;
+1032:                     if (wakeLock3 != null) {
+1033:                         wakeLock3.acquire(10000L);
+1034:                     }
+1035:                     NavigationFragment.this.d9();
+1036:                     jl7 jl7Var = NavigationFragment.this.O2;
+1037:                     if (jl7Var != null) {
+1038:                         jl7Var.B2.setVisibility(0);
+1039:                     } else {
+1040:                         Intrinsics.S("binding");
+1041:                         throw null;
+1042:                     }
+1043:                 }
+1044:             }
+1045:         }
+
+--- NavigationFragment.java:1477-1498 ---
+1477:     public static final void E8(NavigationFragment navigationFragment) {
+1478:         Window window;
+1479:         Window window2;
+1480:         WindowManager.LayoutParams attributes;
+1481:         int i2 = 0;
+1482:         navigationFragment.A2 = false;
+1483:         androidx.fragment.app.d activity = navigationFragment.getActivity();
+1484:         if (activity != null && (window2 = activity.getWindow()) != null && (attributes = window2.getAttributes()) != null) {
+1485:             i2 = attributes.flags;
+1486:         }
+1487:         if ((i2 & 6815872) != 6815872) {
+1488:             androidx.fragment.app.d activity2 = navigationFragment.getActivity();
+1489:             if (activity2 != null && (window = activity2.getWindow()) != null) {
+1490:                 window.addFlags(6815872);
+1491:             }
+1492:             PowerManager.WakeLock wakeLock = navigationFragment.z2;
+1493:             if (wakeLock != null) {
+1494:                 wakeLock.acquire(10000L);
+1495:             }
+1496:         }
+1497:     }
+1498: 
+
+--- NavigationFragment.java:1602-1618 ---
+1602:     public static final void H9(NavigationFragment navigationFragment) {
+1603:         navigationFragment.e6(10);
+1604:         navigationFragment.q6();
+1605:     }
+1606: 
+1607:     public static final Unit I8(NavigationFragment navigationFragment, Boolean bool) {
+1608:         if (bool.booleanValue()) {
+1609:             System.out.println((Object) "weather update called in navigation fragment");
+1610:             navigationFragment.b6(0);
+1611:         }
+1612:         return Unit.a;
+1613:     }
+1614: 
+1615:     public static final void J8(NavigationFragment navigationFragment, Bitmap bitmap) {
+1616:         navigationFragment.M2 = Bitmap.createScaledBitmap(bitmap, sbk.b, 300, true);
+1617:     }
+1618: 
+
+--- NavigationFragment.java:2647-2669 ---
+2647:     public final void D7() {
+2648:         if (this.G3 == null || getContext() == null || S6() == null) {
+2649:             return;
+2650:         }
+2651:         kub.a aVar = new kub.a();
+2652:         aVar.p(c4l.f);
+2653:         jub jubVar = this.G3;
+2654:         Integer numValueOf = jubVar != null ? Integer.valueOf(jubVar.getBitrate()) : null;
+2655:         Intrinsics.m(numValueOf);
+2656:         aVar.o(numValueOf.intValue());
+2657:         jub jubVar2 = this.G3;
+2658:         Integer numValueOf2 = jubVar2 != null ? Integer.valueOf(jubVar2.getFramerate()) : null;
+2659:         Intrinsics.m(numValueOf2);
+2660:         aVar.q(numValueOf2.intValue());
+2661:         aVar.s(1);
+2662:         aVar.t("video/avc");
+2663:         aVar.u(sbk.b);
+2664:         aVar.r(300);
+2665:         kub kubVarB = aVar.b();
+2666:         Context contextRequireContext = requireContext();
+2667:         Intrinsics.o(contextRequireContext, "requireContext(...)");
+2668:         this.T2 = new w9f(contextRequireContext, kubVarB, S6().p3);
+2669:     }
+
+--- NavigationFragment.java:2929-2956 ---
+2929:     public final void F9() {
+2930:         s7(true);
+2931:         e9();
+2932:         jl7 jl7Var = this.O2;
+2933:         if (jl7Var == null) {
+2934:             Intrinsics.S("binding");
+2935:             throw null;
+2936:         }
+2937:         if (jl7Var.E2.v2.getVisibility() != 0) {
+2938:             Context contextRequireContext = requireContext();
+2939:             Intrinsics.o(contextRequireContext, "requireContext(...)");
+2940:             String string = getString(R.string.hint_brightness);
+2941:             Intrinsics.o(string, "getString(...)");
+2942:             p94.a(contextRequireContext, string, R.color.color_373737, R.color.white);
+2943:             Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() { // from class: bluconnect.dxc
+2944:                 @Override // java.lang.Runnable
+2945:                 public final void run() {
+2946:                     NavigationFragment.G9(this.m2);
+2947:                 }
+2948:             }, 3000L, TimeUnit.MILLISECONDS);
+2949:         }
+2950:         jl7 jl7Var2 = this.O2;
+2951:         if (jl7Var2 == null) {
+2952:             Intrinsics.S("binding");
+2953:             throw null;
+2954:         }
+2955:         jl7Var2.E2.v2.setVisibility(0);
+2956:         N7();
+
+--- NavigationFragment.java:4277-4287 ---
+4277:     public final void Y8() {
+4278:         Objects.toString(this.T2);
+4279:         if (!this.U2 || this.T2 == null) {
+4280:             return;
+4281:         }
+4282:         g9();
+4283:         m mVar = new m(zif.y().o());
+4284:         this.K3 = mVar;
+4285:         this.J3.postDelayed(mVar, 1000L);
+4286:     }
+4287: 
+
+--- NavigationFragment.java:4620-4649 ---
+4620:     public final void e6(int i2) {
+4621:         jl7 jl7Var = this.O2;
+4622:         if (jl7Var == null) {
+4623:             Intrinsics.S("binding");
+4624:             throw null;
+4625:         }
+4626:         if (jl7Var.E2.v2.getVisibility() != 0) {
+4627:             return;
+4628:         }
+4629:         androidx.fragment.app.d activity = getActivity();
+4630:         Window window = activity != null ? activity.getWindow() : null;
+4631:         Objects.toString(window);
+4632:         try {
+4633:             int iMax = (int) Math.max(0.0d, Math.min(255.0d, i2));
+4634:             WindowManager.LayoutParams attributes = window != null ? window.getAttributes() : null;
+4635:             if (attributes != null) {
+4636:                 attributes.screenBrightness = iMax / 255.0f;
+4637:             }
+4638:             if (window != null) {
+4639:                 window.setAttributes(attributes);
+4640:             }
+4641:         } catch (Exception e2) {
+4642:             e2.printStackTrace();
+4643:             Unit unit = Unit.a;
+4644:             e2.getMessage();
+4645:             e2.printStackTrace();
+4646:         }
+4647:     }
+4648: 
+4649:     public final void e7() {
+
+--- NavigationFragment.java:4817-4824 ---
+4817:     public final void g9() {
+4818:         this.L3 = 0;
+4819:         Runnable runnable = this.K3;
+4820:         if (runnable != null) {
+4821:             this.J3.removeCallbacks(runnable);
+4822:         }
+4823:     }
+4824: 
+
+--- NavigationFragment.java:5238-5246 ---
+5238:     public final void k9(Bitmap bitmap) {
+5239:         bitmap.getWidth();
+5240:         bitmap.getHeight();
+5241:         w9f w9fVar = this.T2;
+5242:         if (w9fVar != null) {
+5243:             w9fVar.c(bitmap);
+5244:         }
+5245:         if (!this.f3 && !this.d3) {
+5246:             m9(w2c.g);
+
+--- NavigationFragment.java:5652-5667 ---
+5652:         Window window;
+5653:         super.onCreate(bundle);
+5654:         h5d h5dVarS = zif.y().S();
+5655:         this.b4 = h5dVarS;
+5656:         if (h5dVarS != null) {
+5657:             h5dVarS.k(this);
+5658:         }
+5659:         Context context = getContext();
+5660:         Object systemService = context != null ? context.getSystemService("power") : null;
+5661:         Intrinsics.n(systemService, "null cannot be cast to non-null type android.os.PowerManager");
+5662:         this.z2 = ((PowerManager) systemService).newWakeLock(805306394, "reprime::WakeLock");
+5663:         androidx.fragment.app.d activity = getActivity();
+5664:         if (activity != null && (window = activity.getWindow()) != null) {
+5665:             window.addFlags(6815872);
+5666:         }
+5667:         requireActivity().getOnBackPressedDispatcher().h(this, this.c4);
+
+--- NavigationFragment.java:5845-5856 ---
+5845:     @Override // androidx.fragment.app.Fragment
+5846:     public void onPause() {
+5847:         super.onPause();
+5848:         if (Intrinsics.g(S6().r2.getValue(), Boolean.FALSE)) {
+5849:             g9();
+5850:             this.U2 = false;
+5851:         }
+5852:         NavigationRootFragment navigationRootFragmentE3 = e3();
+5853:         if (navigationRootFragmentE3 != null) {
+5854:             navigationRootFragmentE3.qa(4);
+5855:         }
+5856:     }
+
+--- NavigationFragment.java:5897-5924 ---
+5897:     @Override // androidx.fragment.app.Fragment
+5898:     public void onResume() {
+5899:         NavigationRootFragment navigationRootFragmentE3;
+5900:         NavigationRootFragment navigationRootFragmentE4;
+5901:         super.onResume();
+5902:         if (zif.y().K0() && (navigationRootFragmentE4 = e3()) != null) {
+5903:             navigationRootFragmentE4.s7();
+5904:         }
+5905:         this.U2 = true;
+5906:         requireActivity().getOnBackPressedDispatcher().h(this, this.c4);
+5907:         try {
+5908:             if (this.x2 && zif.y().o() == zif.b.INFOTAINMENT) {
+5909:                 new Thread(new Runnable() { // from class: bluconnect.qxc
+5910:                     @Override // java.lang.Runnable
+5911:                     public final void run() throws InterruptedException {
+5912:                         NavigationFragment.G8(this.m2);
+5913:                     }
+5914:                 }).start();
+5915:                 P7(8);
+5916:             } else if (zif.y().o() == zif.b.INFOTAINMENT) {
+5917:                 Y8();
+5918:             }
+5919:         } catch (Exception e2) {
+5920:             e2.printStackTrace();
+5921:         }
+5922:         jl7 jl7Var = this.O2;
+5923:         if (jl7Var == null) {
+5924:             Intrinsics.S("binding");
+
+--- NavigationFragment.java:5966-5974 ---
+5966:     @Override // com.royalenfield.reprime.ui.home.navigation.fragment.a, androidx.fragment.app.Fragment
+5967:     public void onStop() {
+5968:         g9();
+5969:         this.U2 = false;
+5970:         this.I2 = false;
+5971:         m9(w2c.x);
+5972:         super.onStop();
+5973:     }
+5974: 

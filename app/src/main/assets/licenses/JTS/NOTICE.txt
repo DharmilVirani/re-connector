@@ -1,0 +1,4 @@
+JTS Topology Suite 1.20.0
+Copyright © 2007, Eclipse Foundation, Inc. and its licensors.
+
+Used for topology-safe buffering of saved navigation routes. JTS is dual-licensed under the Eclipse Distribution License 1.0 and Eclipse Public License 2.0. This app uses the Eclipse Distribution License 1.0; its full text is in LICENSE_EDLv1.txt. Upstream source: https://github.com/locationtech/jts/tree/1.20.0

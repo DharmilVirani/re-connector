@@ -1,0 +1,60 @@
+{
+  "$schema": "source-evidence.schema.json",
+  "schema_version": "1.0.0",
+  "id": "evd:valhalla-license-2026-11-06",
+  "slug": "valhalla-license-2026-11-06",
+  "title": "Valhalla Software License",
+  "source_type": "repository",
+  "publisher": {
+    "name": "Valhalla Project",
+    "organization": "Valhalla contributors"
+  },
+  "locator": {
+    "url": "https://github.com/valhalla/valhalla/blob/master/COPYING"
+  },
+  "version": {
+    "label": "master license accessed 2026-11-06"
+  },
+  "access": {
+    "method": "web",
+    "accessed_at": "2026-11-06T09:54:40Z",
+    "requires_auth": false,
+    "availability": "public"
+  },
+  "freshness": {
+    "classification": "stable",
+    "status": "fresh",
+    "last_verified_at": "2026-11-06T09:54:40Z",
+    "review_after": "2027-11-06T09:54:40Z",
+    "volatility_notes": "Recheck if the Valhalla repository or dependency changes."
+  },
+  "license": {
+    "status": "known",
+    "spdx_id": "MIT",
+    "name": "MIT License",
+    "url": "https://github.com/valhalla/valhalla/blob/master/COPYING",
+    "redistribution": "allowed",
+    "usage_notes": "Include the copyright and permission notice in copies or substantial portions. This covers the software license, not infrastructure or map-data costs."
+  },
+  "confidence": {
+    "level": "high",
+    "score": 1.0,
+    "rationale": "The repository's COPYING file directly identifies the MIT License."
+  },
+  "evidence_status": "validated",
+  "language": "en",
+  "claims": [
+    {
+      "claim_id": "claim:valhalla-mit-license",
+      "claim": "The Valhalla routing software repository is licensed under MIT, which permits use and redistribution subject to retaining the required notice.",
+      "relationship": "direct_support",
+      "location": "COPYING"
+    }
+  ],
+  "traceability": [
+    {
+      "target_id": "dec:route-provider",
+      "relation": "informs"
+    }
+  ]
+}

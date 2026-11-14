@@ -1,0 +1,129 @@
+{
+  "apk_sha256": "d08478e8c564624503b440834a40499cd4acdc1c8572e49fe1b4830472ad37a4",
+  "package": "com.royalenfield.reprime",
+  "version_name": "10.1.23(45)",
+  "version_code": 193,
+  "tool": "JADX 1.5.6 direct CLI",
+  "tool_zip_sha256": "545ea2be9c242511bc145755cf4bda2485ade42966e096f8b4d3da2a230e8974",
+  "rea_status": "inspect_android_package unavailable: REA_JADX_MCP_JAR not configured. These are direct-tool observations, not REA Evidence IDs.",
+  "limitations": [
+    "Static analysis only; no connected-TFT runtime experiment.",
+    "NavigationFragment decompilation reports 5 errors elsewhere; relevant simple methods emitted normally.",
+    "Obfuscated symbols retained; snapshot label is inferred from map wrapper and Bitmap callback.",
+    "Transport consumer cyb not decompiled; no packet capture."
+  ],
+  "excerpts": [
+    {
+      "file": "NavigationFragment.java",
+      "full_output_sha256": "4c5f367c88bce0c500bd43174c1730f14947001b58a3c7f627c86e0e73d8556c",
+      "ranges": [
+        [
+          725,
+          748
+        ],
+        [
+          931,
+          963
+        ],
+        [
+          1001,
+          1045
+        ],
+        [
+          1477,
+          1498
+        ],
+        [
+          1602,
+          1618
+        ],
+        [
+          2647,
+          2669
+        ],
+        [
+          2929,
+          2956
+        ],
+        [
+          4277,
+          4287
+        ],
+        [
+          4620,
+          4649
+        ],
+        [
+          4817,
+          4824
+        ],
+        [
+          5238,
+          5246
+        ],
+        [
+          5652,
+          5667
+        ],
+        [
+          5845,
+          5856
+        ],
+        [
+          5897,
+          5924
+        ],
+        [
+          5966,
+          5974
+        ]
+      ]
+    },
+    {
+      "file": "k18.java",
+      "full_output_sha256": "74bb041f5ee1b2cf2e7eeeeb84f3431841ed50ad3a9ecb786cf46872abfb3dd3",
+      "ranges": [
+        [
+          60,
+          69
+        ],
+        [
+          986,
+          992
+        ]
+      ]
+    },
+    {
+      "file": "w9f.java",
+      "full_output_sha256": "71a471af070c1513847180a2a96d40c6faec8dc2ea5ea8d5dbb24ae0a18831ec",
+      "ranges": [
+        [
+          59,
+          91
+        ]
+      ]
+    },
+    {
+      "file": "gub.java",
+      "full_output_sha256": "b114b987a705a69b5c39e6f07f3fe43bd08f2168ee5f064a4353a20da9c1cdd4",
+      "ranges": [
+        [
+          85,
+          96
+        ],
+        [
+          151,
+          221
+        ],
+        [
+          225,
+          249
+        ],
+        [
+          258,
+          283
+        ]
+      ]
+    }
+  ]
+}

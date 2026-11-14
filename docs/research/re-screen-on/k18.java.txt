@@ -1,0 +1,22 @@
+Direct JADX 1.5.6 output excerpts; line numbers refer to the full temporary output.
+
+--- k18.java:60-69 ---
+60:     public interface b {
+61:         void a();
+62: 
+63:         void onCancel();
+64:     }
+65: 
+66:     @Instrumented
+67:     public interface b0 {
+68:         void r(Bitmap bitmap);
+69:     }
+
+--- k18.java:986-992 ---
+986:     public final void u0(b0 b0Var, Bitmap bitmap) {
+987:         try {
+988:             this.a.L(new ffm(this, b0Var), bitmap != null ? new com.google.android.libraries.navigation.internal.ni.n(bitmap) : null);
+989:         } catch (RemoteException e2) {
+990:             throw new RuntimeRemoteException((Throwable) e2);
+991:         }
+992:     }
